@@ -11,18 +11,20 @@ import com.burakhankurt.rockpaperscissors.enums.ResultMatchType
 class ClickOperations (private val activity: Activity) {
 
     private val animations = Animations(activity)
+    private  var tabScoreManager =TabScoreManager(activity)
 
     //clickState
     private var isClickable = true
 
-    fun operatinon(onClickId : Int, playerChoseType : ChoseType,) {
+    fun operatinon(onClickId : Int, playerChoseType : ChoseType) {
+
         animations.buttonClickAnimate(onClickId)
         //click state change
         clickState()
         //computer chose
         val computerChoseType: ChoseType = computerChoseType()
         //match result
-        val resultMatch = resultMatch(computerChoseType, playerChoseType)
+        val resultMatch = resultMatch(computerChoseType,playerChoseType)
 
         //animated
         animations.computerAnimate(computerChoseType, resultMatch) {
@@ -34,7 +36,7 @@ class ClickOperations (private val activity: Activity) {
             clickState()
             //buttonClickAfterAnimate
             animations.buttonClickAfterAnimate(onClickId)
-
+            tabScoreManager.putTabScore()
         }
     }
 
