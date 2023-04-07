@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">rockpaperscissors</string>
+    <string name="score">SCORE</string>
+</resources>

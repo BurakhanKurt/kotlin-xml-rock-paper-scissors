@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="orange">#FF6000</color>
+    <color name="background">#FFE6C7</color>
+    <color name="buttonClick">#EFFB78</color>
+    <color name="transparent">#00FFFFFF</color>
+</resources>
